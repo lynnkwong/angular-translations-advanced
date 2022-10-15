@@ -1,0 +1,33 @@
+<div class="container">
+  <!-- Use the `translate` pipe after the translation key. -->
+  <h1>{{ "title" | translate }}</h1>
+  <!-- Concatenate nested translation keys with a dot. -->
+  <label for="languages">{{ "labels.chooseLanguage" | translate }}</label>
+  <!-- When a language is selected, switch to it use `translate.use()`. -->
+  <select
+    [(ngModel)]="langSelected"
+    id="languages"
+    (change)="translate.use(langSelected)"
+  >
+    <!-- Loop through the languages with the `keyvalue` pipe. -->
+    <option *ngFor="let item of languages | keyvalue" [value]="item.key">
+      {{ item.value }}
+    </option>
+  </select>
+
+  <!-- Use the `translate` directive. -->
+  <label for="name" translate="labels.inputName"></label>
+  <!-- Above is equivalent to this one (Note no quotes are needed for the key): -->
+  <!-- <label for="name" translate>labels.inputName</label> -->
+  <input ngModel #nameInput type="text" id="name" />
+
+  <!-- Specify parameter for the translation key with `translateParams`. -->
+  <p
+    translate="display.languageChosen"
+    [translateParams]="{ lang: selectedLangText }"
+  ></p>
+  <!-- You can also specify the parameter with the pipe. -->
+  <p *ngIf="nameInput.value">
+    {{ "display.greetings" | translate: { name: nameInput.value } }}
+  </p>
+</div>

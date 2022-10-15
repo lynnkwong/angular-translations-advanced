@@ -1,0 +1,11 @@
+{
+  "title": "Use translate in Angular.",
+  "labels": {
+    "chooseLanguage": "Choose a language:",
+    "inputName": "Your name:"
+  },
+  "display": {
+    "languageChosen": "The language chosen is: {{lang}}.",
+    "greetings": "Hello {{name}}!"
+  }
+}
