@@ -1,0 +1,15 @@
+<div class="container">
+  <!-- Use the `translate` directive. -->
+  <label for="name-lazy" translate="labels.inputName"></label>
+  <input ngModel #nameInput type="text" id="name-lazy" />
+
+  <!-- Specify parameter for the translation key with `translateParams`. -->
+  <p
+    translate="display.languageChosen"
+    [translateParams]="{ lang: getLangText(translate.currentLang) }"
+  ></p>
+  <!-- You can also specify the parameter with the pipe. -->
+  <p *ngIf="nameInput.value">
+    {{ "display.greetings" | translate: { name: nameInput.value } }}
+  </p>
+</div>

@@ -1,0 +1,24 @@
+{
+  "en": {
+    "title": "Use translate in Angular.",
+    "labels": {
+      "chooseLanguage": "Choose a language:",
+      "inputName": "Your name:"
+    },
+    "display": {
+      "languageChosen": "The language chosen is: {{lang}}.",
+      "greetings": "Hello {{name}}!"
+    }
+  },
+  "sv": {
+    "title": "Använd översätt i Angular.",
+    "labels": {
+      "chooseLanguage": "Välj ett språk:",
+      "inputName": "Ditt namn:"
+    },
+    "display": {
+      "languageChosen": "Det valda språket är: {{lang}}.",
+      "greetings": "Hallå {{name}}!"
+    }
+  }
+}
